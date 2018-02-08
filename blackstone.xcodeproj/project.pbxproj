@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70484F58202C64C30024D4FA /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70484F57202C64C30024D4FA /* UIHelper.swift */; };
+		70484F5B202C6E960024D4FA /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */; };
 		70CA399B202AF62A00A3C859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA399A202AF62A00A3C859 /* AppDelegate.swift */; };
 		70CA399D202AF62A00A3C859 /* SpeciesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA399C202AF62A00A3C859 /* SpeciesController.swift */; };
 		70CA39A0202AF62A00A3C859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CA399E202AF62A00A3C859 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70484F57202C64C30024D4FA /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
 		70CA3997202AF62A00A3C859 /* blackstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CA399A202AF62A00A3C859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70CA399C202AF62A00A3C859 /* SpeciesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesController.swift; sourceTree = "<group>"; };
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70484F59202C6E6A0024D4FA /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		70CA398E202AF62A00A3C859 = {
 			isa = PBXGroup;
 			children = (
@@ -64,7 +76,9 @@
 		70CA3999202AF62A00A3C859 /* blackstone */ = {
 			isa = PBXGroup;
 			children = (
+				70484F59202C6E6A0024D4FA /* cell */,
 				70CA399A202AF62A00A3C859 /* AppDelegate.swift */,
+				70484F57202C64C30024D4FA /* UIHelper.swift */,
 				70CA399C202AF62A00A3C859 /* SpeciesController.swift */,
 				70CA39B1202B0FB000A3C859 /* GuideViewController.swift */,
 				70CA39B3202B0FC300A3C859 /* RecordViewController.swift */,
@@ -156,8 +170,10 @@
 				70CA39B2202B0FB000A3C859 /* GuideViewController.swift in Sources */,
 				70CA39B4202B0FC300A3C859 /* RecordViewController.swift in Sources */,
 				70CA399B202AF62A00A3C859 /* AppDelegate.swift in Sources */,
+				70484F5B202C6E960024D4FA /* SpeciesTableViewCell.swift in Sources */,
 				70CA39B8202B0FE900A3C859 /* SettingViewController.swift in Sources */,
 				70CA39A3202AF62A00A3C859 /* blackstone.xcdatamodeld in Sources */,
+				70484F58202C64C30024D4FA /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +309,8 @@
 		70CA39AD202AF62A00A3C859 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFNEHUV3DG;
 				INFOPLIST_FILE = blackstone/Info.plist;
@@ -308,6 +326,8 @@
 		70CA39AE202AF62A00A3C859 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFNEHUV3DG;
 				INFOPLIST_FILE = blackstone/Info.plist;

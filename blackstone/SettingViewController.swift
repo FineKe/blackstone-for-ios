@@ -14,6 +14,10 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.white
+        self.navigationItem.title = "设置"
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 52/255.0, green: 119/255.0, blue: 197/255.0, alpha: 100/255.0)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
     }
 
     override func didReceiveMemoryWarning() {

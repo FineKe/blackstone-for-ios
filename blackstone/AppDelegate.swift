@@ -17,22 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let tabBarController  = UITabBarController()
+        let tabBarController = window?.rootViewController as! UITabBarController
 
-        let speciesViewController = SpeciesController()
-        let guideViewController = GuideViewController()
-        let recordViewController = RecordViewController()
-        let meViewController = MeViewController()
-        let settingViewController = SettingViewController()
-
-
-
-        //设置tabbar的子控制器集合
-        tabBarController.viewControllers = [UINavigationController(rootViewController: speciesViewController),
-                                            guideViewController,recordViewController,meViewController,
-                                            settingViewController]
+//        let tabBarController  = UITabBarController()
+//
+//        let speciesViewController = SpeciesController()
+//        let guideViewController = GuideViewController()
+//        let recordViewController = RecordViewController()
+//        let meViewController = MeViewController()
+//        let settingViewController = SettingViewController()
+//
+//        //设置tabbar的子控制器集合
+//        tabBarController.viewControllers = [UINavigationController(rootViewController: speciesViewController),
+//                                            guideViewController,recordViewController,meViewController,
+//                                            settingViewController]
         let tabBarItems = tabBarController.tabBar.items
-
+//
         let tabBarItem1 = tabBarItems![0]
         let tabBarItem2 = tabBarItems![1]
         let tabBarItem3 = tabBarItems![2]
@@ -59,11 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         tabBarItem5.selectedImage = #imageLiteral(resourceName: "蓝设置").withRenderingMode(.alwaysOriginal)
         tabBarItem5.image = #imageLiteral(resourceName: "灰设置").withRenderingMode(.alwaysOriginal)
         tabBarItem5.title = "设置"
+//
+//        tabBarController.view.backgroundColor = UIColor.white
+//        tabBarController.hidesBottomBarWhenPushed = true
+//        tabBarController.delegate = self
+//        window?.rootViewController = tabBarController
 
-        tabBarController.view.backgroundColor = UIColor.white
-        tabBarController.hidesBottomBarWhenPushed = true
-        tabBarController.delegate = self
-        window?.rootViewController = tabBarController
+
         return true
     }
 
@@ -74,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
