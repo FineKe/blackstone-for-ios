@@ -17,7 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        UINavigationBar.appearance().tintColor = UIColor.white
         let tabBarController = window?.rootViewController as! UITabBarController
+        tabBarController.hidesBottomBarWhenPushed = true
 
 //        let tabBarController  = UITabBarController()
 //

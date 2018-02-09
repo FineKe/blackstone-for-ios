@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="keB-Na-U3m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="keB-Na-U3m">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeciesTableViewCell" rowHeight="42" id="UP6-5g-BMI" customClass="SpeciesTableViewCell" customModule="blackstone" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeciesTableViewCell" rowHeight="42" id="UP6-5g-BMI" customClass="SpeciesTableViewCell" customModule="blackstone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UP6-5g-BMI" id="RB1-Jl-4YY">
@@ -64,6 +64,7 @@
                                         <connections>
                                             <outlet property="speciesClassName" destination="zDs-96-hb8" id="YYV-QC-3ay"/>
                                             <outlet property="speciesIcon" destination="tOO-Ed-7Gv" id="fLO-zv-vog"/>
+                                            <segue destination="2kq-Eg-OzK" kind="show" id="VcC-Wa-uJE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,11 +89,26 @@
             </objects>
             <point key="canvasLocation" x="3208.8000000000002" y="-400.74962518740631"/>
         </scene>
+        <!--Species Class View Controller-->
+        <scene sceneID="A8S-mk-lda">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="2kq-Eg-OzK" customClass="SpeciesClassViewController" customModule="blackstone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qej-mD-aHL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QKD-LZ-4E4"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="S33-A5-yo6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WbV-XC-nIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4329" y="-401"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ols-dE-tsE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XRe-N1-lCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="gzV-Dq-Q0k" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="gzV-Dq-Q0k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="KuD-Np-CqD">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -109,6 +125,7 @@
                         <segue destination="tYN-9q-HwN" kind="relationship" relationship="viewControllers" id="L92-80-mmq"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRe-N1-lCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-182.40000000000001" y="117.84107946026987"/>
         </scene>
@@ -179,7 +196,6 @@
         <!--物种-->
         <scene sceneID="hm0-NY-rro">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eTA-Be-51M" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OCv-QS-ejG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="物种" image="tabBarItem:mcd-DT-FHc:image" selectedImage="tabBarItem:mcd-DT-FHc:selectedImage" id="mcd-DT-FHc"/>
                     <toolbarItems/>
@@ -192,6 +208,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eKV-q2-gd7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTA-Be-51M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2218.4000000000001" y="-399.85007496251876"/>
         </scene>
