@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import NVActivityIndicatorView
+import SwiftProgressHUD
+
 
 class SpeciesController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -17,42 +20,44 @@ class SpeciesController: UIViewController,UITableViewDataSource,UITableViewDeleg
     let url = URL(string: "https://prod.api.blackstone.ebirdnote.cn/v1/species/categories")
     var data = Array<Array<Category>>()
 
+    let refreshControl = UIRefreshControl()
+
 
     @IBOutlet weak var speciesTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.white
-        self.navigationItem.title = "物种"
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 52/255.0, green: 119/255.0, blue: 197/255.0, alpha: 100/255.0)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
 
         speciesTableView.dataSource = self
         speciesTableView.delegate = self
 
-//        let globaQueue = DispatchQueue.global()
-//
-//        globaQueue.async {
-//            let data:Data!
-//            do
-//            {
-//                try data = Data(contentsOf: self.url!)
-//                let json = String(data: data, encoding: String.Encoding.utf8)
-//                print(json)
-//                print(data.description)
-//            }catch
-//            {
-//                print("加载失败")
-//            }
-//
-//        }
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新")
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        speciesTableView.refreshControl = refreshControl
+        loadData()//加载数据
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    @objc
+    func refreshData() {
+        loadData()
+        refreshControl.endRefreshing()//停止刷新loading显示
+    }
+
+    func loadData() {
+        SwiftProgressHUD.showWait()
+        data.removeAll()
+        speciesTableView.reloadData()
         Alamofire.request(url!, method:.get, parameters: nil, encoding:URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result
             {
             case .success(let value):
                 let json = JSON(value)
-                    print(json["code"])
+                print(json["code"])
                 let data = json["data"]
 
                 let 无脊椎动物 = data["无脊椎动物"]
@@ -83,26 +88,11 @@ class SpeciesController: UIViewController,UITableViewDataSource,UITableViewDeleg
                 self.data.append(arrayOne)
                 self.data.append(arrayTwo)
                 self.speciesTableView.reloadData()
+                SwiftProgressHUD.hideAllHUD()
             case .failure(let error):
-                    print(error)
+                print(error)
             }
-//            do
-//            {
-//                let json = try JSON(String(data: response.data!, encoding: String.Encoding.utf8))
-//                print(json["code"].intValue)
-//                print(json)
-//            }catch
-//            {
-//                print("下载失败")
-//            }
         }
-
-
-
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     //设置章节数目
@@ -145,8 +135,7 @@ class SpeciesController: UIViewController,UITableViewDataSource,UITableViewDeleg
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as! SpeciesClassViewController
-        controller.name = data[speciesTableView.indexPathForSelectedRow!.section][speciesTableView.indexPathForSelectedRow!.row].name
+        controller.category = data[speciesTableView.indexPathForSelectedRow!.section][speciesTableView.indexPathForSelectedRow!.row]
     }
-   
 }
 

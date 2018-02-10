@@ -8,27 +8,37 @@
 
 import UIKit
 
-extension UIImage
+extension UIView
 {
+//    @IBInspectable
+//    var useOriginPixel: Bool {
+//        get {
+//            if self.renderingMode == .alwaysOriginal
+//            {
+//                return true
+//            }else
+//            {
+//                return false
+//            }
+//        }
+//        set {
+//            if newValue
+//            {
+//                self.renderingMode == .alwaysOriginal
+//            }else
+//            {
+//                self.renderingMode == .automatic
+//            }
+//        }
+//    }
+
     @IBInspectable
-    var useOriginPixel: Bool {
+    var cornerRadius: CGFloat {
         get {
-            if self.renderingMode == .alwaysOriginal
-            {
-                return true
-            }else
-            {
-                return false
-            }
+            return self.layer.cornerRadius
         }
         set {
-            if newValue
-            {
-                self.renderingMode == .alwaysOriginal
-            }else
-            {
-                self.renderingMode == .automatic
-            }
+            self.layer.cornerRadius = newValue
         }
     }
 }
