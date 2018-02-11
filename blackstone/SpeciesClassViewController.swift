@@ -18,8 +18,13 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
     var category:Category!
     var url = URL(string: "https://prod.api.blackstone.ebirdnote.cn/v1/species/list")
 
-    var data = Array<Biology>()
-    var refresh:UIRefreshControl!
+    //定义下载的原始数据
+    var originData = Array<Biology>()
+    var refresh:UIRefreshControl!//下拉刷新控件
+    var indexKeys = Array<String>()//索引
+    var finalData = Array<Array<Biology>>();//最终要显示的数据
+    var sectionData = Array<String>()// section的数据
+
     @IBOutlet weak var speciesClassTableView: UITableView!
     
     override func viewDidLoad() {
@@ -50,8 +55,8 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
         refresh = UIRefreshControl()
         refresh.addTarget(self, action: #selector(refreshData), for: UIControlEvents.valueChanged)
         refresh.attributedTitle = NSAttributedString(string: "下拉立即刷新")
-        speciesClassTableView.refreshControl = refresh
-        loadData()
+        speciesClassTableView.refreshControl = refresh // tableview 与刷新控件绑定
+        loadData()//第一次加载数据
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,7 +72,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
     func loadData()
     {
         SwiftProgressHUD.showWait()
-        data.removeAll()
+        originData.removeAll()
         speciesClassTableView.reloadData()
         Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
             .responseJSON { (response) in
@@ -93,8 +98,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                         familyLatin: am["familyLatin"].stringValue,
                                         mainPhoto: am["mainPhoto"].stringValue,
                                         speciesType: am["speciesType"].stringValue)
-                                print(am["chineseName"].stringValue)
-                                self.data.append(biology)
+                                self.originData.append(biology)
                             }
                         case "reptiles":
                             let reptiles = data["reptiles"].arrayValue
@@ -111,7 +115,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       mainPhoto: re["mainPhoto"].stringValue,
                                                       speciesType: re["speciesType"].stringValue)
 
-                                self.data.append(biology)
+                                self.originData.append(biology)
                             }
                         case "bird":
                             let bird = data["bird"].arrayValue
@@ -128,7 +132,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       mainPhoto: bi["mainPhoto"].stringValue,
                                                       speciesType: bi["speciesType"].stringValue)
 
-                                self.data.append(biology)
+                                self.originData.append(biology)
                             }
 
                         case "insect":
@@ -145,7 +149,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       familyLatin: ins["familyLatin"].stringValue,
                                                       mainPhoto: ins["mainPhoto"].stringValue,
                                                       speciesType: ins["speciesType"].stringValue)
-                                self.data.append(biology)
+                                self.originData.append(biology)
                             }
                         case .none:
                             print("none")
@@ -159,22 +163,44 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                 case .failure(let error):
                     print(error)
                 }
+//                self.sortByFamily()
+                self.sortByOrder()//默认按目排序
                 self.speciesClassTableView.reloadData()
                 SwiftProgressHUD.hideAllHUD()
         }
         
     }
 
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return finalData.count
+    }
+
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let label = UILabel(frame: CGRect(x: 13, y: 0, width: 80, height: 30))
+//        label.text = sectionData[section]
+//        label.textColor = UIColor(red: 73/255.0, green: 144/255.0, blue: 226/255.0, alpha: 1)
+//        return label
+//    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionData[section]
+    }
+
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+       return indexKeys
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return finalData[section].count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let identifiter = String(describing: SpeciesClassTableViewCell.self)
         let cell = tableView.dequeueReusableCell(withIdentifier: identifiter) as! SpeciesClassTableViewCell
-        let biology = data[indexPath.row]
-
+//        print("\(indexPath.section)章\(indexPath.row)行")
+        let biology = finalData[indexPath.section][indexPath.row]
         cell.mainPhotoImageView.kf.setImage(with: URL(string:biology.mainPhoto+"?imageView2/0/w/400/h/400"))
         cell.englishNameLabel.text = biology.englishName
         cell.chineseNameLabel.text = biology.chineseName
@@ -185,7 +211,79 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
     
 
 
+    //按科排序
+    func sortByFamily(){
+        finalData.removeAll()
+        sectionData.removeAll()
+        indexKeys.removeAll()
+        speciesClassTableView.reloadData()
+        var index = 0;
 
+        for i in 0..<originData.count - 1
+        {
+            if i == 0
+            {
+                var array = Array<Biology>()
+                array.append(originData[i])
+                finalData.append(array)
+                let key = originData[i].family[...originData[i].family.startIndex]
+                indexKeys.append(String(key))
+                sectionData.append(originData[i].family)
+
+            }
+
+            if originData[i+1].family == originData[i].family
+            {
+                finalData[index].append(originData[i+1])
+            }else
+            {
+                var array = Array<Biology>()
+                array.append(originData[i+1])
+                finalData.append(array)
+                let key = originData[i+1].family[...originData[i+1].family.startIndex]
+                indexKeys.append(String(key))
+                sectionData.append(originData[i+1].family)
+                index += 1
+            }
+        }
+    }
+
+    //按目排序
+    func sortByOrder(){
+        finalData.removeAll()
+        sectionData.removeAll()
+        indexKeys.removeAll()
+        speciesClassTableView.reloadData()
+        var index = 0;
+
+        for i in 0..<originData.count - 1
+        {
+            if i == 0
+            {
+                var array = Array<Biology>()
+                array.append(originData[i])
+                finalData.append(array)
+                let key = originData[i].order[...originData[i].order.startIndex]
+                indexKeys.append(String(key))
+                sectionData.append(originData[i].order)
+
+            }
+
+            if originData[i+1].order == originData[i].order
+            {
+                finalData[index].append(originData[i+1])
+            }else
+            {
+                var array = Array<Biology>()
+                array.append(originData[i+1])
+                finalData.append(array)
+                let key = originData[i+1].order[...originData[i+1].order.startIndex]
+                indexKeys.append(String(key))
+                sectionData.append(originData[i+1].order)
+                index += 1
+            }
+        }
+    }
 
     
 
@@ -204,15 +302,17 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
 
     @objc func changeOrder(){
         print("changeOrder")
-        let alertView = UIAlertController(title: "请选择一种查阅类型", message: "nil", preferredStyle: .actionSheet)
+        let alertView = UIAlertController(title: "请选择一种查阅类型", message:nil, preferredStyle: .actionSheet)
 
 
         let actionOne = UIAlertAction(title: "按目浏览", style: .default) { (_) in
-            print("按目浏览")
+            self.sortByOrder()
+            self.speciesClassTableView.reloadData()
         }
 
         let actionTwo = UIAlertAction(title: "按科浏览", style: .default) { (_) in
-            print("按科浏览")
+            self.sortByFamily()
+            self.speciesClassTableView.reloadData()
         }
 
         alertView.addAction(actionOne)
