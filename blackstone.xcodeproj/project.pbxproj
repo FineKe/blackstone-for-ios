@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014A2F36D27FC1983A99E22E /* Pods_blackstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A200D491A0A8FB93AED4E3E /* Pods_blackstone.framework */; };
+		700C58FF203190C700158284 /* SpeciesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C58FE203190C700158284 /* SpeciesDetailViewController.swift */; };
+		700C59012031A99400158284 /* TextUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C59002031A99400158284 /* TextUtil.swift */; };
+		700C59032031ABD100158284 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700C59022031ABD100158284 /* Extension.swift */; };
 		70484F58202C64C30024D4FA /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70484F57202C64C30024D4FA /* UIHelper.swift */; };
 		70484F5B202C6E960024D4FA /* SpeciesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */; };
+		706E3A022032CEC4009978D3 /* SpeciesDetailedHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E3A012032CEC4009978D3 /* SpeciesDetailedHeaderCell.swift */; };
+		70A4821F7FC0265DBA9B5FEC /* Amphibia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4858BDB6F4918BCF78381 /* Amphibia.swift */; };
+		70A4832A89214D7FFC55AD99 /* Reptiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A4830826813D70F667DEAB /* Reptiles.swift */; };
+		70A4843A454A73660985A7B9 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A488FE5372B4CC1FE083E8 /* Bird.swift */; };
+		70A486EE81020AD6505F71E7 /* Insect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A48257A1C1CEAC9532EBBB /* Insect.swift */; };
 		70CA399B202AF62A00A3C859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA399A202AF62A00A3C859 /* AppDelegate.swift */; };
 		70CA399D202AF62A00A3C859 /* SpeciesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA399C202AF62A00A3C859 /* SpeciesController.swift */; };
 		70CA39A0202AF62A00A3C859 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70CA399E202AF62A00A3C859 /* Main.storyboard */; };
@@ -19,11 +28,25 @@
 		70CA39B4202B0FC300A3C859 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA39B3202B0FC300A3C859 /* RecordViewController.swift */; };
 		70CA39B6202B0FD800A3C859 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA39B5202B0FD800A3C859 /* MeViewController.swift */; };
 		70CA39B8202B0FE900A3C859 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA39B7202B0FE900A3C859 /* SettingViewController.swift */; };
+		70DDFB5C203432F200C4296B /* HHScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DDFB5B203432F100C4296B /* HHScrollView.swift */; };
+		70DDFB5E20347F1900C4296B /* SpeciesDetailedBodyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70DDFB5D20347F1900C4296B /* SpeciesDetailedBodyCell.swift */; };
+		70E43804202D6E31003E8F22 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E43803202D6E31003E8F22 /* Category.swift */; };
+		70E43806202D7E8B003E8F22 /* SpeciesClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E43805202D7E8A003E8F22 /* SpeciesClassViewController.swift */; };
+		70FE2F43202EB9390004BFD4 /* SpeciesClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE2F42202EB9390004BFD4 /* SpeciesClassTableViewCell.swift */; };
+		70FE2F51202EFA270004BFD4 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FE2F50202EFA270004BFD4 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		700C58FE203190C700158284 /* SpeciesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDetailViewController.swift; sourceTree = "<group>"; };
+		700C59002031A99400158284 /* TextUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUtil.swift; sourceTree = "<group>"; };
+		700C59022031ABD100158284 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		70484F57202C64C30024D4FA /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesTableViewCell.swift; sourceTree = "<group>"; };
+		706E3A012032CEC4009978D3 /* SpeciesDetailedHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDetailedHeaderCell.swift; sourceTree = "<group>"; };
+		70A48257A1C1CEAC9532EBBB /* Insect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insect.swift; sourceTree = "<group>"; };
+		70A4830826813D70F667DEAB /* Reptiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reptiles.swift; sourceTree = "<group>"; };
+		70A4858BDB6F4918BCF78381 /* Amphibia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amphibia.swift; sourceTree = "<group>"; };
+		70A488FE5372B4CC1FE083E8 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		70CA3997202AF62A00A3C859 /* blackstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blackstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CA399A202AF62A00A3C859 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70CA399C202AF62A00A3C859 /* SpeciesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesController.swift; sourceTree = "<group>"; };
@@ -36,6 +59,15 @@
 		70CA39B3202B0FC300A3C859 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		70CA39B5202B0FD800A3C859 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		70CA39B7202B0FE900A3C859 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		70DDFB5B203432F100C4296B /* HHScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HHScrollView.swift; sourceTree = "<group>"; };
+		70DDFB5D20347F1900C4296B /* SpeciesDetailedBodyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesDetailedBodyCell.swift; sourceTree = "<group>"; };
+		70E43803202D6E31003E8F22 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		70E43805202D7E8A003E8F22 /* SpeciesClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesClassViewController.swift; sourceTree = "<group>"; };
+		70FE2F42202EB9390004BFD4 /* SpeciesClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesClassTableViewCell.swift; sourceTree = "<group>"; };
+		70FE2F50202EFA270004BFD4 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7A200D491A0A8FB93AED4E3E /* Pods_blackstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blackstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87FB9A057463BFEA7FF198D6 /* Pods-blackstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blackstone.release.xcconfig"; path = "Pods/Target Support Files/Pods-blackstone/Pods-blackstone.release.xcconfig"; sourceTree = "<group>"; };
+		EDB9722DF3B0CCB0E6422DFE /* Pods-blackstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blackstone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blackstone/Pods-blackstone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,18 +75,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014A2F36D27FC1983A99E22E /* Pods_blackstone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184207732253A613E553EA34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A200D491A0A8FB93AED4E3E /* Pods_blackstone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		70484F59202C6E6A0024D4FA /* cell */ = {
 			isa = PBXGroup;
 			children = (
 				70484F5A202C6E960024D4FA /* SpeciesTableViewCell.swift */,
+				70FE2F42202EB9390004BFD4 /* SpeciesClassTableViewCell.swift */,
+				706E3A012032CEC4009978D3 /* SpeciesDetailedHeaderCell.swift */,
+				70DDFB5D20347F1900C4296B /* SpeciesDetailedBodyCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		70A48201E9455FD1DFDD1FB2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				70A4858BDB6F4918BCF78381 /* Amphibia.swift */,
+				70A488FE5372B4CC1FE083E8 /* Bird.swift */,
+				70A48257A1C1CEAC9532EBBB /* Insect.swift */,
+				70A4830826813D70F667DEAB /* Reptiles.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		70CA398E202AF62A00A3C859 = {
@@ -62,6 +117,8 @@
 			children = (
 				70CA3999202AF62A00A3C859 /* blackstone */,
 				70CA3998202AF62A00A3C859 /* Products */,
+				CD173D5C6391498BF0F284C1 /* Pods */,
+				184207732253A613E553EA34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,8 +137,14 @@
 				70CA399A202AF62A00A3C859 /* AppDelegate.swift */,
 				70484F57202C64C30024D4FA /* UIHelper.swift */,
 				70CA399C202AF62A00A3C859 /* SpeciesController.swift */,
+				70FE2F50202EFA270004BFD4 /* LoadingView.swift */,
+				70E43805202D7E8A003E8F22 /* SpeciesClassViewController.swift */,
+				700C58FE203190C700158284 /* SpeciesDetailViewController.swift */,
+				700C59002031A99400158284 /* TextUtil.swift */,
+				700C59022031ABD100158284 /* Extension.swift */,
 				70CA39B1202B0FB000A3C859 /* GuideViewController.swift */,
 				70CA39B3202B0FC300A3C859 /* RecordViewController.swift */,
+				70DDFB5B203432F100C4296B /* HHScrollView.swift */,
 				70CA39B7202B0FE900A3C859 /* SettingViewController.swift */,
 				70CA39B5202B0FD800A3C859 /* MeViewController.swift */,
 				70CA399E202AF62A00A3C859 /* Main.storyboard */,
@@ -89,8 +152,19 @@
 				70CA39AF202AFA6400A3C859 /* Assets.xcassets */,
 				70CA39A9202AF62A00A3C859 /* Info.plist */,
 				70CA39A1202AF62A00A3C859 /* blackstone.xcdatamodeld */,
+				70E43803202D6E31003E8F22 /* Category.swift */,
+				70A48201E9455FD1DFDD1FB2 /* model */,
 			);
 			path = blackstone;
+			sourceTree = "<group>";
+		};
+		CD173D5C6391498BF0F284C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDB9722DF3B0CCB0E6422DFE /* Pods-blackstone.debug.xcconfig */,
+				87FB9A057463BFEA7FF198D6 /* Pods-blackstone.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70CA39AC202AF62A00A3C859 /* Build configuration list for PBXNativeTarget "blackstone" */;
 			buildPhases = (
+				D87FD14FFE25A626DA67DA9D /* [CP] Check Pods Manifest.lock */,
 				70CA3993202AF62A00A3C859 /* Sources */,
 				70CA3994202AF62A00A3C859 /* Frameworks */,
 				70CA3995202AF62A00A3C859 /* Resources */,
+				B1712B9B75B49A3026590168 /* [CP] Embed Pods Frameworks */,
+				86F083EEB9E39FE2D0AF604C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,13 +237,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86F083EEB9E39FE2D0AF604C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blackstone/Pods-blackstone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1712B9B75B49A3026590168 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-blackstone/Pods-blackstone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftProgressHUD/SwiftProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blackstone/Pods-blackstone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D87FD14FFE25A626DA67DA9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-blackstone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		70CA3993202AF62A00A3C859 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700C58FF203190C700158284 /* SpeciesDetailViewController.swift in Sources */,
+				700C59012031A99400158284 /* TextUtil.swift in Sources */,
+				70E43806202D7E8B003E8F22 /* SpeciesClassViewController.swift in Sources */,
+				70DDFB5E20347F1900C4296B /* SpeciesDetailedBodyCell.swift in Sources */,
 				70CA39B6202B0FD800A3C859 /* MeViewController.swift in Sources */,
+				70E43804202D6E31003E8F22 /* Category.swift in Sources */,
 				70CA399D202AF62A00A3C859 /* SpeciesController.swift in Sources */,
+				70FE2F51202EFA270004BFD4 /* LoadingView.swift in Sources */,
 				70CA39B2202B0FB000A3C859 /* GuideViewController.swift in Sources */,
 				70CA39B4202B0FC300A3C859 /* RecordViewController.swift in Sources */,
 				70CA399B202AF62A00A3C859 /* AppDelegate.swift in Sources */,
@@ -174,6 +319,14 @@
 				70CA39B8202B0FE900A3C859 /* SettingViewController.swift in Sources */,
 				70CA39A3202AF62A00A3C859 /* blackstone.xcdatamodeld in Sources */,
 				70484F58202C64C30024D4FA /* UIHelper.swift in Sources */,
+				706E3A022032CEC4009978D3 /* SpeciesDetailedHeaderCell.swift in Sources */,
+				70FE2F43202EB9390004BFD4 /* SpeciesClassTableViewCell.swift in Sources */,
+				700C59032031ABD100158284 /* Extension.swift in Sources */,
+				70A4821F7FC0265DBA9B5FEC /* Amphibia.swift in Sources */,
+				70A4843A454A73660985A7B9 /* Bird.swift in Sources */,
+				70DDFB5C203432F200C4296B /* HHScrollView.swift in Sources */,
+				70A486EE81020AD6505F71E7 /* Insect.swift in Sources */,
+				70A4832A89214D7FFC55AD99 /* Reptiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +461,7 @@
 		};
 		70CA39AD202AF62A00A3C859 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDB9722DF3B0CCB0E6422DFE /* Pods-blackstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -325,6 +479,7 @@
 		};
 		70CA39AE202AF62A00A3C859 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87FB9A057463BFEA7FF198D6 /* Pods-blackstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

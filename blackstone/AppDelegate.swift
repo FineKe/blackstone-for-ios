@@ -150,3 +150,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
 
 }
 
+enum SpeciesClass:String{
+
+    case Bird = "bird"
+    case Amphibia = "amphibia"
+    case Reptiles = "reptiles"
+    case Insect = "insect"
+}
+

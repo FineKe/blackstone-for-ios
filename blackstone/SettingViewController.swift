@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
-
 class SettingViewController: UIViewController {
 
     override func viewDidLoad() {

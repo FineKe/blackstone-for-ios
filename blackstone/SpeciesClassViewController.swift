@@ -97,7 +97,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                         family: am["family"].stringValue,
                                         familyLatin: am["familyLatin"].stringValue,
                                         mainPhoto: am["mainPhoto"].stringValue,
-                                        speciesType: am["speciesType"].stringValue)
+                                        speciesType: .Amphibia)
                                 self.originData.append(biology)
                             }
                         case "reptiles":
@@ -113,7 +113,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       family: re["family"].stringValue,
                                                       familyLatin: re["familyLatin"].stringValue,
                                                       mainPhoto: re["mainPhoto"].stringValue,
-                                                      speciesType: re["speciesType"].stringValue)
+                                                      speciesType: .Reptiles)
 
                                 self.originData.append(biology)
                             }
@@ -130,7 +130,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       family: bi["family"].stringValue,
                                                       familyLatin: bi["familyLatin"].stringValue,
                                                       mainPhoto: bi["mainPhoto"].stringValue,
-                                                      speciesType: bi["speciesType"].stringValue)
+                                                      speciesType: .Bird)
 
                                 self.originData.append(biology)
                             }
@@ -148,7 +148,7 @@ class SpeciesClassViewController: UIViewController,UITableViewDelegate,UITableVi
                                                       family: ins["family"].stringValue,
                                                       familyLatin: ins["familyLatin"].stringValue,
                                                       mainPhoto: ins["mainPhoto"].stringValue,
-                                                      speciesType: ins["speciesType"].stringValue)
+                                                      speciesType: .Insect)
                                 self.originData.append(biology)
                             }
                         case .none:
@@ -334,10 +334,10 @@ struct Biology {
     var family:String //科
     var familyLatin:String //科拉丁
     var mainPhoto:String //主头像
-    var speciesType:String //种类
+    var speciesType:SpeciesClass //种类
 
     init(id:Int,chineseName:String,englishName:String = "",latinName:String,order:String = "",orderLatin:String = "",
-         family:String,familyLatin:String,mainPhoto:String,speciesType:String) {
+         family:String,familyLatin:String,mainPhoto:String,speciesType:SpeciesClass) {
         self.id = id
         self.chineseName = chineseName
         self.englishName = englishName

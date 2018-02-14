@@ -7,4 +7,5 @@ target 'blackstone' do
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
     pod 'Kingfisher', '~> 4.0'
     pod 'SwiftProgressHUD'
+    pod 'SDWebImage'
 end
